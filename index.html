@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stella Nova Nail Studio</title>
+    
+    <!-- SEO & OG Meta Tags -->
+    <meta name="description" content="Stella Nova Nail Studio offers a premier nail care experience in Miami, providing exceptional manicures, pedicures, and nail art in a relaxing, professional environment.">
+    <meta property="og:title" content="Stella Nova Nail Studio">
+    <meta property="og:description" content="Stella Nova Nail Studio offers a premier nail care experience in Miami, providing exceptional manicures, pedicures, and nail art in a relaxing, professional environment.">
+    <meta property="og:image" content="./image-1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.google.com/maps/search/Stella%20Nova%20Nail%20Studio">
+
+    <!-- SVG Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23b37082'/><text x='50' y='68' font-size='60' fill='white' text-anchor='middle' font-family='Arial,sans-serif' font-weight='bold'>S</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           CSS VARIABLES & THEME (Luxury Nail Salon)
+           ========================================== */
+        :root {
+            --primary: #b37082; /* Rose Gold / Soft Pink */
+            --primary-dark: #925868;
+            --accent: #1a1a1a; /* Deep Charcoal */
+            --bg-color: #fcfbf9; /* Warm Cream */
+            --surface: rgba(255, 255, 255, 0.8);
+            --surface-glass: rgba(255, 255, 255, 0.4);
+            --text-main: #1a1a1a;
+            --text-light: #555555;
+            --border-glass: rgba(255, 255, 255, 0.6);
+            --shadow-soft: 0 20px 40px rgba(179, 112, 130, 0.08);
+            --shadow-heavy: 0 30px 60px rgba(26, 26, 26, 0.15);
+            --radius-sm: 12px;
+            --radius-md: 24px;
+            --radius-lg: 32px;
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ==========================================
+           RESET & BASE
+           ========================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b37082' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--accent);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: clamp(6rem, 12vh, 12rem) 5%;
+            position: relative;
+        }
+
+        /* ==========================================
+           TYPOGRAPHY & UTILITIES
+           ========================================== */
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .title-lg { font-size: clamp(3rem, 8vw, 6.5rem); }
+        .title-md { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        .title-sm { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+
+        .text-center { text-align: center; }
+        .max-w-800 { max-width: 800px; margin-inline: auto; }
+        
+        .glass-panel {
+            background: var(--surface-glass);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* ==========================================
+           BUTTONS
+           ========================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 100px;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(26, 26, 26, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(179, 112, 130, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ==========================================
+           PRELOADER
+           ========================================== */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--accent);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease;
+        }
+
+        .preloader-text {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--bg-color);
+            animation: pulse 2s infinite;
+            padding: 0 2rem;
+            text-align: center;
+            word-break: break-word;
+            max-width: 90vw;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* ==========================================
+           NAVIGATION
+           ========================================== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(252, 251, 249, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-main);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px; left: 0; width: 0; height: 1px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-open { color: #10b981; }
+        .status-open .status-dot { background: #10b981; box-shadow: 0 0 10px #10b981; animation: pulseDot 2s infinite; }
+        .status-closed { color: #ef4444; }
+        .status-closed .status-dot { background: #ef4444; }
+
+        @keyframes pulseDot {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            font-family: var(--font-head);
+            display: block;
+            padding: 1rem;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .close-mobile {
+            position: absolute;
+            top: 2rem; right: 2rem;
+            background: none; border: none;
+            color: white; font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================
+           STICKY SIDEBAR
+           ========================================== */
+        .sticky-sidebar {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 900;
+        }
+
+        .sticky-sidebar a {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: var(--surface-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .sticky-sidebar a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            z-index: 10;
+            padding-right: 2rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            opacity: 0;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+        }
+
+        .hero-image-wrapper {
+            height: 80vh;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(0px);
+            animation: floatHero 8s ease-in-out infinite;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: kenburns 20s infinite alternate linear;
+        }
+
+        @keyframes heroReveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatHero {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        /* ==========================================
+           MARQUEE
+           ========================================== */
+        .marquee-section {
+            padding: 2rem 0;
+            background: var(--accent);
+            color: white;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: scrollMarquee 20s linear infinite;
+        }
+
+        .marquee-item {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            margin: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .marquee-item i {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ==========================================
+           ABOUT SECTION
+           ========================================== */
+        .about {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: var(--radius-lg);
+            z-index: 2;
+            margin: 1rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ==========================================
+           WHY CHOOSE US (FEATURES)
+           ========================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: white;
+        }
+
+        .feature-icon {
+            width: 80px; height: 80px;
+            background: rgba(179, 112, 130, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* ==========================================
+           SERVICES
+           ========================================== */
+        .services-section {
+            background: var(--accent);
+            color: white;
+        }
+
+        .services-section .eyebrow { color: var(--primary); }
+        .services-section h2 { color: white; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ==========================================
+           PRICING MENU
+           ========================================== */
+        .menu-container {
+            max-width: 900px;
+            margin: 4rem auto 0;
+        }
+
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+
+        .menu-category h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 0.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .menu-name {
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .menu-dots {
+            flex-grow: 1;
+            border-bottom: 2px dotted rgba(0,0,0,0.2);
+            margin: 0 1rem;
+            position: relative;
+            top: -4px;
+        }
+
+        .menu-price {
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        /* ==========================================
+           NEWSLETTER
+           ========================================== */
+        .newsletter-section {
+            padding: 8rem 5%;
+            background: linear-gradient(rgba(252, 251, 249, 0.9), rgba(252, 251, 249, 0.9)), url('./image-13.jpg') center/cover fixed;
+        }
+
+        .newsletter-box {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 4rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 1.2rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.8);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(179, 112, 130, 0.1);
+        }
+
+        /* ==========================================
+           TEAM SECTION
+           ========================================== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .team-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.05);
+        }
+
+        .team-card h3 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+        .team-card p { color: var(--primary); font-weight: 500; margin-bottom: 1rem; }
+
+        /* ==========================================
+           SOCIAL FEED (INSTAGRAM MOCK)
+           ========================================== */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-item {
+            aspect-ratio: 1;
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .social-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .social-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 26, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .social-item:hover img { transform: scale(1.1); }
+        .social-item:hover .social-overlay { opacity: 1; }
+
+        /* ==========================================
+           LUXURY BENTO GALLERY
+           ========================================== */
+        .gallery-section {
+            background: var(--accent);
+            color: white;
+        }
+        .gallery-section .eyebrow { color: var(--primary); }
+        .gallery-section h2 { color: white; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 350px 350px 350px;
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .bento-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bento-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+            filter: grayscale(40%);
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0%);
+        }
+
+        .bento-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .bento-item:hover::after { opacity: 1; }
+
+        /* Asymmetric Spans */
+        .bento-1 { grid-column: span 2; grid-row: span 2; }
+        .bento-2 { grid-column: span 1; grid-row: span 1; }
+        .bento-3 { grid-column: span 1; grid-row: span 2; }
+        .bento-4 { grid-column: span 1; grid-row: span 1; }
+        .bento-5 { grid-column: span 2; grid-row: span 1; }
+        .bento-6 { grid-column: span 1; grid-row: span 1; }
+        .bento-7 { grid-column: span 1; grid-row: span 1; }
+        .bento-8 { grid-column: span 2; grid-row: span 1; }
+
+        /* ==========================================
+           SPOTLIGHT (BEFORE & AFTER)
+           ========================================== */
+        .spotlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .spotlight-images {
+            position: relative;
+            height: 600px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .spotlight-images img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .spotlight-images .after-img {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            transition: clip-path 0.5s ease;
+        }
+
+        .spotlight-images:hover .after-img {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .spotlight-label {
+            position: absolute;
+            bottom: 2rem;
+            background: rgba(255,255,255,0.9);
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        .label-before { left: 2rem; }
+        .label-after { right: 2rem; }
+
+        /* ==========================================
+           STATS COUNTER
+           ========================================== */
+        .stats-section {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 5%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .stat-number {
+            font-family: var(--font-head);
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+        }
+
+        /* ==========================================
+           MAP & HOURS
+           ========================================== */
+        .location-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--radius-lg);
+            filter: grayscale(100%) contrast(1.2) sepia(10%) hue-rotate(320deg);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hours-card {
+            padding: 3rem;
+        }
+
+        .hours-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+        }
+
+        .hours-list li.closed {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ==========================================
+           REVIEWS
+           ========================================== */
+        .reviews-section {
+            background: var(--bg-color);
+            text-align: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: left;
+        }
+
+        .review-card {
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 1rem; right: 2rem;
+            font-family: var(--font-head);
+            font-size: 6rem;
+            color: rgba(179, 112, 130, 0.1);
+            line-height: 1;
+        }
+
+        .stars {
+            color: gold;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* ==========================================
+           FAQ
+           ========================================== */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            background: white;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 2rem;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        /* ==========================================
+           FINAL CTA BANNER
+           ========================================== */
+        .final-cta {
+            padding: 10rem 5%;
+            text-align: center;
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('./image-15.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            border-radius: var(--radius-lg);
+            margin: 0 2% 4rem;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background: var(--accent);
+            color: white;
+            padding: 6rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+        }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+
+        .qr-code {
+            width: 120px; height: 120px;
+            background: white;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ==========================================
+           FLOATING CHAT WIDGET
+           ========================================== */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .chat-fab {
+            width: 65px; height: 65px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(26, 26, 26, 0.3);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseFab 2s infinite;
+        }
+
+        .chat-fab:hover { transform: scale(1.05); }
+
+        @keyframes pulseFab {
+            0% { box-shadow: 0 0 0 0 rgba(26, 26, 26, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(26, 26, 26, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(26, 26, 26, 0); }
+        }
+
+        .chat-panel {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 350px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid var(--border-glass);
+            overflow: hidden;
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-panel.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .chat-header {
+            background: var(--accent);
+            color: white;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .chat-avatar {
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .chat-info h4 { color: white; font-family: var(--font-body); font-size: 1rem; margin: 0; }
+        .chat-status { font-size: 0.8rem; color: #10b981; display: flex; align-items: center; gap: 5px; }
+        .chat-status::before { content: ''; width: 8px; height: 8px; background: #10b981; border-radius: 50%; }
+
+        .chat-body {
+            height: 300px;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #f9f9f9;
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 1rem;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .bubble-in {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .bubble-out {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-time {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .quick-reply-btn {
+            background: white;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quick-reply-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            background: white;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            border: none;
+            background: #f0f0f0;
+            padding: 0.8rem 1rem;
+            border-radius: 100px;
+            outline: none;
+            font-family: var(--font-body);
+        }
+
+        .chat-input button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chat-input button:hover { background: var(--primary); }
+
+        /* ==========================================
+           PROMO POPUP
+           ========================================== */
+        .promo-popup {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-heavy);
+            z-index: 10000;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .promo-popup.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .promo-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .promo-overlay.show { opacity: 1; pointer-events: all; }
+
+        .promo-close {
+            position: absolute;
+            top: 1.5rem; right: 1.5rem;
+            background: none; border: none;
+            font-size: 1.5rem; cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .promo-popup h3 { font-size: 2rem; margin-bottom: 1rem; color: var(--primary); }
+        .promo-popup p { margin-bottom: 2rem; }
+        .promo-popup input {
+            width: 100%; padding: 1rem; margin-bottom: 1rem;
+            border: 1px solid #ddd; border-radius: var(--radius-sm);
+        }
+        .promo-popup .btn { width: 100%; }
+
+        /* ==========================================
+           STICKY MOBILE CTA
+           ========================================== */
+        .mobile-cta-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 9998;
+        }
+
+        .mobile-cta-bar .btn { width: 100%; font-size: 1.1rem; padding: 1.2rem; }
+
+        /* ==========================================
+           SCROLL REVEAL UTILITY
+           ========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ==========================================
+           MANDATORY RESPONSIVE OVERRIDES
+           ========================================== */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { overflow-x: hidden !important; width: 100%; margin: 0; padding: 0; }
+        img, video, iframe { max-width: 100%; height: auto; }
+        a { color: inherit; text-decoration: none; }
+        
+        /* DESKTOP NAV DEFAULTS */
+        nav, header { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; z-index: 9999 !important; display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 1rem 5% !important; background: rgba(252, 251, 249, 0.9) !important; backdrop-filter: blur(20px) !important; box-sizing: border-box !important; }
+        body { padding-top: 100px !important; }
+        .hamburger, .menu-toggle, .mobile-menu-btn { display: none !important; }
+        .sidebar, .side-bar, .sticky-sidebar { display: flex; }
+        section, .section { padding: clamp(4rem, 8vh, 8rem) 5% !important; width: 100% !important; box-sizing: border-box !important; overflow: hidden; }
+        h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
+
+        /* TABLET OVERRIDES */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          nav .nav-links, nav .desktop-nav, nav ul { display: none !important; }
+          .nav-actions .btn-primary, .nav-actions .btn { display: none !important; }
+          .hamburger, .menu-toggle, .mobile-menu-btn { display: flex !important; align-items: center; justify-content: center; font-size: 24px; color: var(--accent); background: none; border: none; cursor: pointer; }
+          .hero { display: flex !important; flex-direction: column !important; min-height: auto !important; height: auto !important; padding-top: 110px !important; gap: 2rem !important; grid-template-columns: 1fr !important; }
+          .hero-content, .hero-text, .hero-left { order: -1 !important; width: 100% !important; }
+          .hero-image-wrapper, .hero-image, .hero-visual, .hero-right { height: 45vh !important; max-height: 400px !important; min-height: unset !important; width: 100% !important; order: 1 !important; border-radius: 20px !important; overflow: hidden !important; }
+          .about, .about-section, .location, .location-section, .spotlight, .contact, .contact-section, .team, .team-section, .experience, .results, .process { display: flex !important; flex-direction: column !important; grid-template-columns: 1fr !important; }
+          .about > *, .about-section > *, .location-section > *, .spotlight > *, .contact-section > * { width: 100% !important; }
+          [class*="grid"], .services-grid, .stats-grid, .pricing-grid, .faq-grid, .features-grid, .gallery-grid, .bento-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .bento-grid > *, .gallery-grid > * { grid-column: span 1 !important; grid-row: span 1 !important; }
+          .footer-grid, .footer-columns, footer > div { grid-template-columns: repeat(2, 1fr) !important; }
+          section, .section { padding: 3rem 5% !important; }
+          .sidebar, .side-bar, .sticky-sidebar { display: none !important; }
+          html, body { overflow-x: hidden !important; }
+         }
+
+         /* MOBILE OVERRIDES */
+        @media (max-width: 768px) {
+          nav, header { padding: 15px !important; background: rgba(252, 251, 249, 0.98) !important; border-bottom: 1px solid rgba(0,0,0,0.05); }
+          nav .logo, nav .brand, header .logo { font-size: 1.1rem !important; max-width: 50vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: auto; }
+          nav .nav-links, nav .desktop-nav, nav ul { display: none !important; }
+          .nav-actions .btn-primary, .nav-actions .btn { display: none !important; }
+          .hamburger, .menu-toggle, .mobile-menu-btn { display: flex !important; align-items: center; justify-content: center; font-size: 24px; color: var(--accent); background: none; border: none; cursor: pointer; z-index: 101; margin-left: 15px; }
+          
+          .hero { display: flex !important; flex-direction: column !important; min-height: auto !important; height: auto !important; padding-top: 100px !important; gap: 1.5rem !important; grid-template-columns: 1fr !important; }
+          .hero-content, .hero-text, .hero-left { order: -1 !important; width: 100% !important; }
+          .hero-image-wrapper, .hero-image, .hero-visual, .hero-right { height: 35vh !important; max-height: 280px !important; min-height: unset !important; width: 100% !important; order: 1 !important; border-radius: 16px !important; overflow: hidden !important; }
+          .hero-image-wrapper img, .hero-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+          .hero h1, .hero-title { font-size: clamp(1.8rem, 7vw, 3rem) !important; line-height: 1.15 !important; margin-bottom: 0.75rem !important; }
+          .hero p, .hero-subtitle { font-size: 1rem !important; margin-bottom: 1rem !important; }
+          
+          /* CRITICAL: Force ALL section layouts to stack */
+          [class*="grid"], [class*="row"],
+          .about, .about-grid, .about-section, .about-content,
+          .services-grid, .team-grid, .gallery-grid, .bento-grid,
+          .footer-grid, .footer-columns, .stats-grid,
+          .location, .location-section, .location-grid, .location-content,
+          .spotlight, .spotlight-content, .contact, .contact-section, .contact-grid,
+          .team, .team-section, .experience, .results, .process, .social-grid,
+          .hero { grid-template-columns: 1fr !important; display: flex !important; flex-direction: column !important; }
+          .about > *, .about-section > *, .location-section > *, .spotlight > *, .contact-section > *, .team > *:not(.team-grid) { width: 100% !important; }
+          [class*="grid"] > *, .bento-grid > *, .gallery-grid > * { grid-column: span 1 !important; grid-row: span 1 !important; width: 100% !important; }
+          
+          footer { padding: 2rem 1rem !important; margin-bottom: 80px !important; }
+          .hero-buttons, .hero-cta, .hero .btn-group, .hero-actions { display: flex !important; flex-direction: column !important; align-items: stretch; width: 100%; }
+          .hero-buttons a, .hero-buttons button, .hero .btn-group a { width: 100% !important; text-align: center; box-sizing: border-box; }
+          
+          [class*="chat-widget"], [class*="floating-chat"], #chat-widget { bottom: 90px !important; right: 15px !important; }
+          .sidebar, .side-bar, .sticky-sidebar { display: none !important; }
+          .cursor-dot, .cursor-outline { display: none !important; }
+          
+          /* Promo popup — don't block the viewport */
+          .promo-popup, #promoPopup { position: fixed !important; top: auto !important; bottom: 80px !important; left: 5% !important; right: 5% !important; width: 90% !important; max-height: 50vh !important; border-radius: 16px !important; overflow-y: auto !important; transform: none !important; }
+          
+          .mobile-cta-bar { display: block !important; }
+          .final-cta { margin: 0 0 2rem 0 !important; border-radius: 0 !important; }
+        }
+    
+/* ═══ SITEFLOW: Hero Visibility Safety Net ═══ */
+.hero h1, .hero-title, .hero h2, .hero p, .hero-subtitle,
+.hero .btn-group, .hero-buttons, .hero-cta, .hero-actions,
+.hero .eyebrow, .hero span, .hero a,
+section.hero > *, .hero-content, .hero-content > * {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+/* Only allow the hero ANIMATION to run (not scroll-reveal) */
+.hero h1, .hero-title { animation: heroReveal 1s ease forwards !important; }
+.hero p, .hero-subtitle { animation: heroReveal 1s ease 0.2s forwards !important; }
+.hero .btn-group, .hero-buttons, .hero-cta { animation: heroReveal 1s ease 0.4s forwards !important; }
+@keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══ SITEFLOW: Tablet Breakpoint (769px–1024px) ═══ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* NAV — switch to hamburger on tablet too */
+  .nav-links, .desktop-nav, nav ul, .nav-menu, .desktop-links,
+  .nav-actions .btn-primary, .nav-actions .btn { display: none !important; }
+  .hamburger, .menu-toggle, .mobile-menu-btn, .nav-toggle,
+  [class*="hamburger"], [class*="menu-btn"] {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* HERO — stack vertically, text first */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 110px !important;
+    gap: 2rem !important;
+    grid-template-columns: 1fr !important;
+  }
+  .hero-content, .hero-text, .hero-left, .hero > div:first-child {
+    order: -1 !important;
+    width: 100% !important;
+  }
+  .hero-image-wrapper, .hero-image, .hero-visual, .hero-right,
+  .hero-img, .hero-media {
+    height: 45vh !important;
+    max-height: 400px !important;
+    min-height: unset !important;
+    width: 100% !important;
+    order: 1 !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+  .hero-image-wrapper img, .hero-image img, .hero-visual img {
+    width: 100% !important; height: 100% !important; object-fit: cover !important;
+  }
+  .hero h1, .hero-title { font-size: clamp(2.2rem, 5vw, 3.5rem) !important; }
+
+  /* ALL SECTION LAYOUTS — force stack or 2-col on tablet */
+  /* These target EVERY common class the AI generates */
+  .about, .about-section, .about-content,
+  .location, .location-section, .location-grid, .location-content,
+  .spotlight, .spotlight-content,
+  .contact, .contact-section, .contact-grid,
+  .team, .team-section,
+  [class*="split"], [class*="two-col"], [class*="two_col"],
+  section > div[style*="grid-template-columns"],
+  section > div[style*="display: grid"],
+  section > div[style*="display:grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+  }
+  .about > *, .about-section > *, .location-section > *,
+  .spotlight > *, .contact-section > * {
+    width: 100% !important;
+  }
+
+  /* GRIDS — 2 columns max on tablet */
+  [class*="grid"], .services-grid, .stats-grid,
+  .pricing-grid, .faq-grid, .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .gallery-grid, .bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .bento-grid > *, .gallery-grid > * {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  /* FOOTER */
+  .footer-grid, .footer-columns, footer > div {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  section, .section { padding: 3rem 5% !important; }
+  .sidebar, .side-bar, .sticky-sidebar { display: none !important; }
+
+  /* POPUP */
+  .promo-popup, #promoPopup, [class*="promo-popup"],
+  .modal-overlay, #popup, .popup {
+    width: 70% !important; max-width: 500px !important;
+    left: 50% !important; transform: translateX(-50%) !important;
+  }
+
+  html, body { overflow-x: hidden !important; }
+  *, *::before, *::after { max-width: 100vw; box-sizing: border-box; }
+}
+
+/* ═══ SITEFLOW: Mobile Safety Net ═══ */
+@media (max-width: 768px) {
+  /* Force ALL section layouts to stack on mobile */
+  .hero, [class*="grid"], [class*="row"],
+  .about, .about-grid, .about-section, .about-content,
+  .services-grid, .team-grid, .gallery-grid,
+  .bento-grid, .footer-grid, .footer-columns, .stats-grid,
+  .pricing-grid, .faq-grid, .features-grid,
+  .location, .location-section, .location-grid, .location-content,
+  .spotlight, .spotlight-content, .spotlight-grid,
+  .contact, .contact-section, .contact-grid, .contact-content,
+  .team, .team-section, .team-content,
+  .experience, .experience-section,
+  .results, .results-section, .results-grid,
+  .process, .process-section, .process-grid,
+  .testimonials-grid, .reviews-grid, .social-grid,
+  [class*="split"], [class*="two-col"], [class*="two_col"],
+  section > div[style*="grid-template-columns"],
+  section > div[style*="display: grid"],
+  section > div[style*="display:grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+  }
+  /* Force all children of stacked sections to take full width */
+  .about > *, .about-section > *, .location-section > *,
+  .spotlight > *, .contact-section > *, .team > *:not(.team-grid),
+  .experience > *, .results > *, .process > * {
+    width: 100% !important;
+  }
+  /* Prevent any element from exceeding screen width */
+  *, *::before, *::after { max-width: 100vw; box-sizing: border-box; }
+  img, video, iframe, canvas { max-width: 100% !important; }
+  /* Force hide desktop nav, show hamburger */
+  .nav-links, .desktop-nav, nav ul, .nav-menu, .desktop-links {
+    display: none !important;
+  }
+  .hamburger, .menu-toggle, .mobile-menu-btn, .nav-toggle, [class*="hamburger"], [class*="menu-btn"] {
+    display: flex !important;
+  }
+  /* Prevent horizontal scroll */
+  html, body { overflow-x: hidden !important; width: 100% !important; }
+
+  /* ═══ HERO FIX — TEXT FIRST, IMAGE SECOND, NO BLANK SPACE ═══ */
+  .hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 100px !important;
+    padding-bottom: 2rem !important;
+    gap: 1.5rem !important;
+  }
+  /* Force text content to appear FIRST on mobile */
+  .hero-content, .hero-text, .hero-left, .hero > div:first-child {
+    order: -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  /* Cap hero image container height — NEVER let it dominate the viewport */
+  .hero-image-wrapper, .hero-image, .hero-visual, .hero-right,
+  .hero-img, .hero-media, .hero > div:last-child:not(.hero-content):not(.hero-text) {
+    height: 35vh !important;
+    max-height: 280px !important;
+    min-height: unset !important;
+    width: 100% !important;
+    order: 1 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+  .hero-image-wrapper img, .hero-image img, .hero-visual img, .hero-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .hero h1, .hero-title {
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero p, .hero-subtitle { font-size: 1rem !important; margin-bottom: 1rem !important; }
+  .hero .btn-group, .hero-buttons, .hero-cta, .hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .hero .btn-group a, .hero .btn-group button,
+  .hero-buttons a, .hero-cta a {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  /* Hide sidebar on mobile */
+  .sidebar, .side-bar, .sticky-sidebar { display: none !important; }
+  /* Fix chat widget position above mobile CTA */
+  [class*="chat"], #chat-widget, .chat-fab, .floating-chat { bottom: 90px !important; }
+
+  /* ═══ PROMO POPUP FIX — don't block the entire mobile viewport ═══ */
+  .promo-popup, #promoPopup, [class*="promo-popup"], [class*="popup-overlay"],
+  .modal-overlay, #popup, .popup {
+    position: fixed !important;
+    top: auto !important;
+    bottom: 80px !important;
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+    max-height: 50vh !important;
+    border-radius: 16px !important;
+    overflow-y: auto !important;
+    transform: none !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text">Stella Nova Nail Studio</div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <button class="close-mobile"><i class="fas fa-times"></i></button>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="tel:7865085119" style="color: var(--primary); margin-top: 1rem;">(786) 508-5119</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <svg width="30" height="30" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="#b37082"/><text x="50" y="68" font-size="60" fill="white" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold">S</text></svg>
+            Stella Nova
+        </a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <div class="status-badge" id="openStatus">
+                <div class="status-dot"></div>
+                <span class="status-text">Checking...</span>
+            </div>
+            <a href="tel:7865085119" class="btn btn-primary">Book Now</a>
+            <button class="hamburger"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Sticky Sidebar -->
+    <div class="sticky-sidebar">
+        <a href="tel:7865085119" title="Call Us"><i class="fas fa-phone"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="eyebrow" style="animation: heroReveal 1s ease forwards; animation-delay: 0.2s;">Stella Nova • Miami, FL</span>
+            <h1 class="title-lg" style="animation: heroReveal 1s ease forwards; animation-delay: 0.4s;">Elevate Your Elegance.</h1>
+            <p style="animation: heroReveal 1s ease forwards; animation-delay: 0.6s;">Experience Miami's premier nail care destination. Discover your perfect style in a sanctuary dedicated to exceptional beauty and personalized pampering.</p>
+            <div class="hero-buttons" style="animation: heroReveal 1s ease forwards; animation-delay: 0.8s;">
+                <a href="tel:7865085119" class="btn btn-primary">Book Appointment</a>
+                <a href="#services" class="btn btn-outline">Explore Menu</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="./image-1.jpg" alt="Stella Nova Nail Studio Interior">
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-content">
+            <div class="marquee-item">Luxury Manicures <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Custom Nail Art <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Spa Pedicures <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Gel Extensions <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Relaxing Environment <i class="fas fa-star"></i></div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="marquee-item">Luxury Manicures <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Custom Nail Art <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Spa Pedicures <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Gel Extensions <i class="fas fa-star"></i></div>
+            <div class="marquee-item">Relaxing Environment <i class="fas fa-star"></i></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-image reveal">
+            <img src="./image-2.jpg" alt="Nail Care Experience">
+        </div>
+        <div class="about-content reveal delay-1">
+            <span class="eyebrow">Our Philosophy</span>
+            <h2 class="title-md" style="margin-bottom: 1.5rem;">A Sanctuary of Beauty & Well-being.</h2>
+            <p>At Stella Nova Nail Studio, we believe that nail care is more than just a routine—it's an essential ritual of self-care. Located in the heart of Miami, our studio was founded on the principle of delivering exceptional, long-lasting results in an environment that feels like a retreat.</p>
+            <p>Our highly trained technicians are passionate about their craft, utilizing only premium products and the latest techniques to ensure your nails are not only beautiful but healthy. Whether you're seeking a classic, understated look or bold, avant-garde nail art, we are dedicated to bringing your vision to life with precision and care.</p>
+            <a href="tel:7865085119" class="btn btn-outline" style="margin-top: 1rem;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="glass-panel" style="margin: 0 5%; padding: 4rem 2rem;">
+        <div class="text-center reveal">
+            <span class="eyebrow">The Stella Nova Standard</span>
+            <h2 class="title-sm">Why Miami Chooses Us</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal delay-1">
+                <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                <h3>Premium Products</h3>
+                <p>We exclusively use high-end, non-toxic polishes and gels that ensure a flawless, long-lasting finish without compromising nail health.</p>
+            </div>
+            <div class="feature-card reveal delay-2">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Strict Hygiene</h3>
+                <p>Your safety is our priority. We employ medical-grade sterilization for all tools and utilize single-use implements for every client.</p>
+            </div>
+            <div class="feature-card reveal delay-3">
+                <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                <h3>Personalized Care</h3>
+                <p>Every appointment begins with a consultation to understand your unique style, ensuring a bespoke experience tailored just for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="text-center max-w-800 reveal">
+            <span class="eyebrow">Our Expertise</span>
+            <h2 class="title-md">Curated Nail Services</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">From essential maintenance to elaborate artistic expressions, our comprehensive menu is designed to cater to every aesthetic desire.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal delay-1">
+                <div class="service-img"><img src="./image-3.jpg" alt="Manicure"></div>
+                <div class="service-content">
+                    <h3>Signature Manicures</h3>
+                    <p>Complete cuticle care, shaping, soothing massage, and flawless polish application for elegant hands.</p>
+                    <a href="tel:7865085119" style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em;">Book Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="service-card reveal delay-2">
+                <div class="service-img"><img src="./image-4.jpg" alt="Pedicure"></div>
+                <div class="service-content">
+                    <h3>Spa Pedicures</h3>
+                    <p>A rejuvenating retreat for your feet featuring exfoliation, deep hydration, and meticulous nail detailing.</p>
+                    <a href="tel:7865085119" style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em;">Book Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="service-card reveal delay-3">
+                <div class="service-img"><img src="./image-5.jpg" alt="Nail Art"></div>
+                <div class="service-content">
+                    <h3>Custom Enhancements</h3>
+                    <p>Gel extensions, acrylics, and intricate hand-painted nail art tailored to your individual style.</p>
+                    <a href="tel:7865085119" style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em;">Book Service <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Menu -->
+    <section class="reveal">
+        <div class="text-center">
+            <span class="eyebrow">Investment in Beauty</span>
+            <h2 class="title-md">Service Menu</h2>
+        </div>
+        <div class="menu-container">
+            <div class="menu-category reveal delay-1">
+                <h3>Natural Nails</h3>
+                <div class="menu-item">
+                    <span class="menu-name">Classic Manicure</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$35</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Gel Polish Manicure</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$50</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Signature Spa Pedicure</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$65</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Gel Pedicure</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$80</span>
+                </div>
+            </div>
+            <div class="menu-category reveal delay-2">
+                <h3>Enhancements</h3>
+                <div class="menu-item">
+                    <span class="menu-name">Acrylic Full Set</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$75+</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Hard Gel Extensions</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$85+</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Dip Powder (SNS)</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$60</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Custom Nail Art (Per Finger)</span>
+                    <span class="menu-dots"></span>
+                    <span class="menu-price">$5 - $15</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="tel:7865085119" class="btn btn-primary">Reserve Your Time</a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section reveal">
+        <div class="newsletter-box glass-panel">
+            <h2 class="title-sm">Join the VIP List</h2>
+            <p style="margin-top: 1rem; color: var(--text-light);">Subscribe to receive exclusive offers, seasonal trend updates, and priority booking access.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="reveal">
+        <div class="text-center">
+            <span class="eyebrow">The Artists</span>
+            <h2 class="title-md">Meet Our Experts</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card reveal delay-1">
+                <div class="team-img"><img src="./image-6.jpg" alt="Team Member"></div>
+                <h3>Elena</h3>
+                <p>Master Technician</p>
+                <a href="tel:7865085119" class="btn btn-outline" style="padding: 0.8rem 2rem;">Book Elena</a>
+            </div>
+            <div class="team-card reveal delay-2">
+                <div class="team-img"><img src="./image-7.jpg" alt="Team Member"></div>
+                <h3>Sofia</h3>
+                <p>Nail Art Specialist</p>
+                <a href="tel:7865085119" class="btn btn-outline" style="padding: 0.8rem 2rem;">Book Sofia</a>
+            </div>
+            <div class="team-card reveal delay-3">
+                <div class="team-img"><img src="./image-8.jpg" alt="Team Member"></div>
+                <h3>Mia</h3>
+                <p>Spa Pedicure Expert</p>
+                <a href="tel:7865085119" class="btn btn-outline" style="padding: 0.8rem 2rem;">Book Mia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Feed -->
+    <section class="reveal">
+        <div class="text-center">
+            <span class="eyebrow">On The Gram</span>
+            <h2 class="title-sm">Follow Our Journey</h2>
+        </div>
+        <div class="social-grid">
+            <div class="social-item reveal delay-1">
+                <img src="./image-9.jpg" alt="Instagram Post">
+                <div class="social-overlay"><i class="fas fa-heart"></i> 142</div>
+            </div>
+            <div class="social-item reveal delay-2">
+                <img src="./image-10.jpg" alt="Instagram Post">
+                <div class="social-overlay"><i class="fas fa-heart"></i> 256</div>
+            </div>
+            <div class="social-item reveal delay-3">
+                <img src="./image-11.jpg" alt="Instagram Post">
+                <div class="social-overlay"><i class="fas fa-heart"></i> 189</div>
+            </div>
+            <div class="social-item reveal delay-4">
+                <img src="./image-12.jpg" alt="Instagram Post">
+                <div class="social-overlay"><i class="fas fa-heart"></i> 310</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Bento Gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="text-center reveal">
+            <span class="eyebrow">Portfolio</span>
+            <h2 class="title-md">Our Masterpieces</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 1rem; max-width: 600px; margin-inline: auto;">A curated collection of our finest work, showcasing precision, creativity, and the flawless finish that defines Stella Nova.</p>
+        </div>
+        <div class="bento-grid">
+            <div class="bento-item bento-1 reveal delay-1"><img src="./image-1.jpg" alt="Gallery Image 1"></div>
+            <div class="bento-item bento-2 reveal delay-2"><img src="./image-2.jpg" alt="Gallery Image 2"></div>
+            <div class="bento-item bento-3 reveal delay-3"><img src="./image-3.jpg" alt="Gallery Image 3"></div>
+            <div class="bento-item bento-4 reveal delay-1"><img src="./image-4.jpg" alt="Gallery Image 4"></div>
+            <div class="bento-item bento-5 reveal delay-2"><img src="./image-5.jpg" alt="Gallery Image 5"></div>
+            <div class="bento-item bento-6 reveal delay-3"><img src="./image-6.jpg" alt="Gallery Image 6"></div>
+            <div class="bento-item bento-7 reveal delay-1"><img src="./image-7.jpg" alt="Gallery Image 7"></div>
+            <div class="bento-item bento-8 reveal delay-2"><img src="./image-8.jpg" alt="Gallery Image 8"></div>
+        </div>
+    </section>
+
+    <!-- Spotlight (Before & After) -->
+    <section class="spotlight">
+        <div class="spotlight-content reveal">
+            <span class="eyebrow">Transformation</span>
+            <h2 class="title-md" style="margin-bottom: 1.5rem;">The Stella Nova Difference.</h2>
+            <p>Witness the transformative power of professional nail care. We take pride in restoring health to damaged nails and elevating natural beauty through meticulous technique and premium products.</p>
+            <ul style="list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Cuticle restoration and hydration</li>
+                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Structural correction for weak nails</li>
+                <li><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Flawless, chip-resistant finish</li>
+            </ul>
+        </div>
+        <div class="spotlight-images reveal delay-1">
+            <img src="./image-13.jpg" alt="Before" class="before-img">
+            <img src="./image-14.jpg" alt="After" class="after-img">
+            <div class="spotlight-label label-before">Before</div>
+            <div class="spotlight-label label-after">After (Hover)</div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item reveal delay-1">
+                <i class="fas fa-star"></i>
+                <div class="stat-number"><span class="count" data-target="61">0</span>+</div>
+                <div class="stat-label">5-Star Reviews</div>
+            </div>
+            <div class="stat-item reveal delay-2">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-number"><span class="count" data-target="5">0</span></div>
+                <div class="stat-label">Star Rating</div>
+            </div>
+            <div class="stat-item reveal delay-3">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="stat-number"><span class="count" data-target="5">0</span>+</div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+            <div class="stat-item reveal delay-4">
+                <i class="fas fa-smile"></i>
+                <div class="stat-number"><span class="count" data-target="2500">0</span>+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Hours -->
+    <section id="contact" class="location-section">
+        <div class="map-container reveal">
+            <iframe src="https://maps.google.com/maps?q=18950%20SW%20106th%20Ave%20Ste%20121%20%235%2C%20Miami%2C%20FL%2033157%2C%20USA&t=&z=15&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="hours-card glass-panel reveal delay-1">
+            <h2 class="title-sm">Visit Our Studio</h2>
+            <p style="margin-top: 1rem; color: var(--text-light);"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> 18950 SW 106th Ave Ste 121 #5, Miami, FL 33157</p>
+            <p style="margin-top: 0.5rem; color: var(--text-light);"><i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> (786) 508-5119</p>
+            
+            <ul class="hours-list">
+                <li class="closed"><span>Monday</span> <span>Closed</span></li>
+                <li><span>Tuesday</span> <span>8:00 AM – 7:00 PM</span></li>
+                <li><span>Wednesday</span> <span>8:00 AM – 7:00 PM</span></li>
+                <li><span>Thursday</span> <span>8:00 AM – 7:00 PM</span></li>
+                <li><span>Friday</span> <span>8:00 AM – 7:00 PM</span></li>
+                <li><span>Saturday</span> <span>8:00 AM – 7:00 PM</span></li>
+                <li class="closed"><span>Sunday</span> <span>Closed</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reviews-section">
+        <div class="text-center reveal">
+            <span class="eyebrow">Client Love</span>
+            <h2 class="title-md">Words of Praise</h2>
+            <p style="margin-top: 1rem; color: var(--text-light);">Voted 5 Stars by 61 happy clients.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card glass-panel reveal delay-1">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Absolutely the best nail salon in Miami! The attention to detail is unmatched, and the salon itself is so relaxing and beautiful. My gel manicure lasted weeks without chipping."</p>
+                <p class="reviewer-name">— Sarah M.</p>
+            </div>
+            <div class="review-card glass-panel reveal delay-2">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"I've been coming to Stella Nova for months and they never disappoint. The staff is incredibly professional, and the hygiene standards are top-notch. Highly recommend the spa pedicure!"</p>
+                <p class="reviewer-name">— Jessica T.</p>
+            </div>
+            <div class="review-card glass-panel reveal delay-3">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"Found my new go-to spot! The nail art they did for my wedding was breathtaking. They really take their time to make sure everything is perfect. 10/10 experience."</p>
+                <p class="reviewer-name">— Amanda R.</p>
+            </div>
+        </div>
+        <div class="text-center reveal" style="margin-top: 2rem;">
+            <a href="https://www.google.com/maps/search/Stella%20Nova%20Nail%20Studio" target="_blank" class="btn btn-outline">Leave a Review on Google</a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="reveal">
+        <div class="text-center" style="margin-bottom: 4rem;">
+            <span class="eyebrow">Information</span>
+            <h2 class="title-sm">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <button class="faq-question">Do I need to make an appointment? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p style="padding-top: 1rem;">While we do accept walk-ins if we have availability, we highly recommend booking an appointment in advance to guarantee your preferred time and technician, as our schedule fills up quickly.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What brands of polish do you use? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p style="padding-top: 1rem;">We use only premium, professional-grade brands known for their longevity and safe ingredients, including OPI, Essie, Gelish, and Apres for our extension services.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How do you sanitize your tools? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p style="padding-top: 1rem;">Hygiene is our top priority. All metal implements are scrubbed, disinfected, and sterilized in a medical-grade autoclave. Files and buffers are single-use and discarded after each client.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you offer group bookings or bridal parties? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p style="padding-top: 1rem;">Yes! We love hosting bridal parties, birthdays, and group events. Please call us directly at (786) 508-5119 to discuss group rates and availability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="final-cta reveal">
+        <h2 class="title-md">Ready for Flawless Nails?</h2>
+        <p>Book your appointment today and experience the luxury of Stella Nova.</p>
+        <a href="tel:7865085119" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 3rem;">Book Your Visit Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="footer-logo">Stella Nova</span>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; max-width: 300px;">Miami's premier destination for luxury nail care, offering exceptional services in a relaxing, professional environment.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services & Pricing</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li style="display: flex; gap: 10px;"><i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--primary);"></i> 18950 SW 106th Ave Ste 121 #5<br>Miami, FL 33157</li>
+                    <li style="display: flex; gap: 10px; align-items: center;"><i class="fas fa-phone" style="color: var(--primary);"></i> <a href="tel:7865085119">(786) 508-5119</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect Instantly</h4>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=tel:7865085119" alt="Scan to Connect" class="qr-code">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stella Nova Nail Studio. All rights reserved.</p>
+            <p>Built by SiteFlow</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="mobile-cta-bar">
+        <a href="tel:7865085119" class="btn btn-primary">BOOK NOW</a>
+    </div>
+
+    <!-- Floating Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-fab" id="chatFab"><i class="fas fa-comment-dots"></i></button>
+        <div class="chat-panel" id="chatPanel">
+            <div class="chat-header">
+                <div class="chat-profile">
+                    <img src="./image-1.jpg" alt="Support" class="chat-avatar">
+                    <div class="chat-info">
+                        <h4>Stella Nova Support</h4>
+                        <span class="chat-status">Online</span>
+                    </div>
+                </div>
+                <button class="chat-close" id="chatClose" style="background:none;border:none;color:white;font-size:20px;cursor:pointer;"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <div class="chat-bubble bubble-in">
+                    Hi there! 👋 How can we help you at Stella Nova Nail Studio today?
+                </div>
+                <div class="chat-time">Just now</div>
+                
+                <div class="quick-replies" id="quickReplies">
+                    <button class="quick-reply-btn" data-reply="Hours?">Hours?</button>
+                    <button class="quick-reply-btn" data-reply="Location?">Location?</button>
+                    <button class="quick-reply-btn" data-reply="Services?">Services?</button>
+                    <button class="quick-reply-btn" data-reply="WhatsApp Us">WhatsApp Us</button>
+                    <button class="quick-reply-btn" data-reply="Leave a Review">Leave a Review</button>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." id="chatInputText">
+                <button id="chatSubmit"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promo Popup -->
+    <div class="promo-overlay" id="promoOverlay"></div>
+    <div class="promo-popup" id="promoPopup">
+        <button class="promo-close" id="promoClose"><i class="fas fa-times"></i></button>
+        <h3>Welcome to Stella Nova!</h3>
+        <p>Get 15% off your first visit when you join our VIP list today.</p>
+        <form onsubmit="event.preventDefault(); document.getElementById('promoPopup').classList.remove('show'); document.getElementById('promoOverlay').classList.remove('show'); alert('Offer Claimed! Check your email.');">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary">Claim Offer</button>
+        </form>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Preloader
+        try {
+            window.addEventListener('load', () => {
+                const preloader = document.getElementById('preloader');
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => preloader.remove(), 800);
+                }, 1000);
+            });
+        } catch(e) { console.warn(e); }
+
+        // 2. Navigation Scroll Effect
+        try {
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
+        } catch(e) { console.warn(e); }
+
+        // 3. Mobile Menu Toggle
+        try {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMobile = document.querySelector('.close-mobile');
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+            hamburger.addEventListener('click', () => mobileMenu.classList.add('active'));
+            closeMobile.addEventListener('click', () => mobileMenu.classList.remove('active'));
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+            });
+        } catch(e) { console.warn(e); }
+
+        // 4. Scroll Reveal (Intersection Observer)
+        try {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        } catch(e) { console.warn(e); }
+
+        // 5. Live Open/Closed Badge
+        try {
+            const updateStatus = () => {
+                const badge = document.getElementById('openStatus');
+                const text = badge.querySelector('.status-text');
+                const now = new Date();
+                // Convert to Miami time (EST/EDT) roughly for client side
+                const miamiTime = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
+                const day = miamiTime.getDay(); // 0=Sun, 1=Mon, 2=Tue...
+                const hour = miamiTime.getHours();
+
+                // Hours: Tue-Sat (2-6) 8am-7pm. Mon(1)/Sun(0) Closed.
+                let isOpen = false;
+                if (day >= 2 && day <= 6) {
+                    if (hour >= 8 && hour < 19) {
+                        isOpen = true;
+                    }
+                }
+
+                if (isOpen) {
+                    badge.classList.remove('status-closed');
+                    badge.classList.add('status-open');
+                    text.textContent = 'OPEN NOW';
+                } else {
+                    badge.classList.remove('status-open');
+                    badge.classList.add('status-closed');
+                    text.textContent = 'CLOSED';
+                }
+            };
+            updateStatus();
+            setInterval(updateStatus, 60000); // Check every minute
+        } catch(e) { console.warn(e); }
+
+        // 6. Animated Stats Counter
+        try {
+            const counters = document.querySelectorAll('.count');
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = +entry.target.getAttribute('data-target');
+                        const duration = 2000;
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                entry.target.innerText = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                entry.target.innerText = target;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(counter => statsObserver.observe(counter));
+        } catch(e) { console.warn(e); }
+
+        // 7. FAQ Accordion
+        try {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(i => i.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+        } catch(e) { console.warn(e); }
+
+        // 8. Floating Chat Widget
+        try {
+            const chatFab = document.getElementById('chatFab');
+            const chatPanel = document.getElementById('chatPanel');
+            const chatClose = document.getElementById('chatClose');
+            const chatBody = document.getElementById('chatBody');
+            const quickReplies = document.getElementById('quickReplies');
+
+            const toggleChat = () => {
+                chatPanel.classList.toggle('open');
+                if (chatPanel.classList.contains('open')) {
+                    chatFab.innerHTML = '<i class="fas fa-times"></i>';
+                } else {
+                    chatFab.innerHTML = '<i class="fas fa-comment-dots"></i>';
+                }
+            };
+
+            chatFab.addEventListener('click', toggleChat);
+            chatClose.addEventListener('click', toggleChat);
+
+            const addMessage = (text, type, isHtml = false) => {
+                const bubble = document.createElement('div');
+                bubble.className = `chat-bubble ${type === 'in' ? 'bubble-in' : 'bubble-out'}`;
+                if (isHtml) bubble.innerHTML = text;
+                else bubble.textContent = text;
+                
+                const time = document.createElement('div');
+                time.className = 'chat-time';
+                time.textContent = 'Just now';
+
+                chatBody.appendChild(bubble);
+                chatBody.appendChild(time);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            };
+
+            quickReplies.addEventListener('click', (e) => {
+                if (e.target.classList.contains('quick-reply-btn')) {
+                    const reply = e.target.getAttribute('data-reply');
+                    addMessage(reply, 'out');
+                    quickReplies.style.display = 'none';
+
+                    setTimeout(() => {
+                        let response = "";
+                        let isHtml = false;
+                        if (reply === 'Hours?') response = "We are open Tuesday through Saturday from 8:00 AM to 7:00 PM. We are closed on Sundays and Mondays.";
+                        else if (reply === 'Location?') response = "We are located at 18950 SW 106th Ave Ste 121 #5, Miami, FL 33157.";
+                        else if (reply === 'Services?') response = "We offer luxury manicures, spa pedicures, gel extensions, and custom nail art. Check out our Services section for full details!";
+                        else if (reply === 'WhatsApp Us') {
+                            response = `<a href="https://wa.me/7865085119" target="_blank" style="text-decoration: underline; color: white;">💬 Chat with us on WhatsApp!</a>`;
+                            isHtml = true;
+                        }
+                        else if (reply === 'Leave a Review') {
+                            response = `<a href="https://www.google.com/maps/search/Stella%20Nova%20Nail%20Studio" target="_blank" style="text-decoration: underline; color: white;">Click here to leave a Google Review!</a>`;
+                            isHtml = true;
+                        }
+                        addMessage(response, 'in', isHtml);
+                    }, 600);
+                }
+            });
+
+            document.getElementById('chatSubmit').addEventListener('click', () => {
+                const input = document.getElementById('chatInputText');
+                if(input.value.trim() !== '') {
+                    addMessage(input.value, 'out');
+                    input.value = '';
+                    setTimeout(() => {
+                        addMessage("Thanks for your message! Please call us at (786) 508-5119 for immediate assistance or to book an appointment.", 'in');
+                    }, 1000);
+                }
+            });
+        } catch(e) { console.warn(e); }
+
+        // 9. Promo Popup
+        try {
+            const promoPopup = document.getElementById('promoPopup');
+            const promoOverlay = document.getElementById('promoOverlay');
+            const promoClose = document.getElementById('promoClose');
+
+            setTimeout(() => {
+                if(!sessionStorage.getItem('promoShown')) {
+                    promoPopup.classList.add('show');
+                    promoOverlay.classList.add('show');
+                    sessionStorage.setItem('promoShown', 'true');
+                }
+            }, 5000);
+
+            const closePromo = () => {
+                promoPopup.classList.remove('show');
+                promoOverlay.classList.remove('show');
+            };
+
+            promoClose.addEventListener('click', closePromo);
+            promoOverlay.addEventListener('click', closePromo);
+        } catch(e) { console.warn(e); }
+
+        // 10. CRITICAL GLOBAL CLOSE HANDLER
+        try {
+            document.body.addEventListener('click', e => { 
+                if(e.target.closest('.close-modal, .modal-close, .close, [aria-label="Close"]') || e.target.classList.contains('modal-overlay')) { 
+                    const m = e.target.closest('.modal, .popup, #popup, .fixed'); 
+                    if(m) m.style.display = 'none'; 
+                    else document.querySelectorAll('.modal, .popup, #popup').forEach(p=>p.style.display='none'); 
+                } 
+            });
+        } catch(e) { console.warn(e); }
+
+    </script>
+
+<script>
+/* ═══ SITEFLOW BULLETPROOF MOBILE MENU ═══ */
+(function() {
+  try {
+    // Find the hamburger button — try EVERY known selector
+    var hamburger = document.querySelector('.hamburger')
+      || document.querySelector('.menu-toggle')
+      || document.querySelector('.mobile-menu-btn')
+      || document.querySelector('.nav-toggle')
+      || document.querySelector('[class*="hamburger"]')
+      || document.querySelector('[class*="menu-btn"]')
+      || document.querySelector('[class*="menu-toggle"]')
+      || document.querySelector('button[aria-label*="menu" i]')
+      || document.querySelector('nav button');
+
+    // Find the mobile menu overlay — try EVERY known selector
+    var mobileMenu = document.querySelector('.mobile-menu')
+      || document.querySelector('.nav-menu')
+      || document.querySelector('.mobile-nav')
+      || document.querySelector('.menu-overlay')
+      || document.querySelector('[class*="mobile-menu"]')
+      || document.querySelector('[class*="mobile-nav"]')
+      || document.querySelector('[class*="nav-overlay"]');
+
+    // If the AI didn't create a mobile menu at all, BUILD ONE from the desktop nav links
+    if (hamburger && !mobileMenu) {
+      var navLinks = document.querySelectorAll('.nav-links a, .desktop-nav a, nav ul a, nav a:not(.logo):not([class*="logo"])');
+      if (navLinks.length > 0) {
+        mobileMenu = document.createElement('div');
+        mobileMenu.className = 'mobile-menu';
+        mobileMenu.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.97);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;transform:translateX(100%);transition:transform 0.3s ease;';
+        // Add close button
+        var closeBtn = document.createElement('button');
+        closeBtn.className = 'close-menu';
+        closeBtn.innerHTML = '<i class="fas fa-times" style="font-size:28px;color:white;"></i>';
+        closeBtn.style.cssText = 'position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer;z-index:201;';
+        mobileMenu.appendChild(closeBtn);
+        // Clone all nav links
+        navLinks.forEach(function(link) {
+          var clone = link.cloneNode(true);
+          clone.style.cssText = 'color:white;text-decoration:none;font-size:1.3rem;display:block;padding:0.75rem 0;';
+          mobileMenu.appendChild(clone);
+        });
+        document.body.appendChild(mobileMenu);
+      }
+    }
+
+    if (!hamburger || !mobileMenu) return;
+
+    // Remove any existing click handlers by cloning the hamburger
+    var newHamburger = hamburger.cloneNode(true);
+    hamburger.parentNode.replaceChild(newHamburger, hamburger);
+    hamburger = newHamburger;
+
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      mobileMenu.style.transform = 'translateX(0)';
+      hamburger.innerHTML = '<i class="fas fa-times" style="font-size:28px;"></i>';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      mobileMenu.style.transform = 'translateX(100%)';
+      hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (mobileMenu.classList.contains('active')) { closeMenu(); } else { openMenu(); }
+    });
+
+    // Close when clicking any link inside the mobile menu
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() { closeMenu(); });
+    });
+
+    // Close when clicking any close button inside the menu
+    mobileMenu.querySelectorAll('.close-menu, .mobile-close, [class*="close"], button').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) { closeMenu(); }
+    });
+
+  } catch(e) { console.error('[SiteFlow Menu]', e); }
+})();
+</script>
+
+<script>
+/* ═══ SITEFLOW: WRAP AI JAVASCRIPT IN SAFETY NET ═══ */
+/* If the AI's JS has bugs (open/closed badge, stats counter, etc.), */
+/* this ensures the menu and core features still work. */
+(function() {
+  try {
+    // Force remove any scroll-reveal opacity:0 from hero after 2 seconds
+    setTimeout(function() {
+      var hero = document.querySelector('.hero, #hero, section:first-of-type');
+      if (hero) {
+        hero.querySelectorAll('*').forEach(function(el) {
+          var style = window.getComputedStyle(el);
+          if (style.opacity === '0') {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          }
+        });
+      }
+    }, 2000);
+
+    // Force fix: if preloader is STILL showing after 4 seconds, kill it
+    setTimeout(function() {
+      var preloader = document.querySelector('.preloader, #preloader, .loading-screen, .loader-overlay, [class*="preload"]');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        preloader.style.pointerEvents = 'none';
+        setTimeout(function() { if (preloader.parentNode) preloader.parentNode.removeChild(preloader); }, 500);
+      }
+    }, 4000);
+
+    // Force dismiss promo popup on mobile — don't let it block the hero
+    if (window.innerWidth <= 768) {
+      setTimeout(function() {
+        var popups = document.querySelectorAll('.promo-popup, #promoPopup, [class*="promo-popup"], [class*="popup-overlay"], .modal-overlay');
+        popups.forEach(function(popup) {
+          if (popup && window.getComputedStyle(popup).display !== 'none') {
+            popup.style.display = 'none';
+          }
+        });
+      }, 1000);
+    }
+
+    // NUCLEAR GRID BUSTER — find ANY element using CSS grid with 2+ columns on mobile/tablet
+    // This catches patterns our CSS selectors might miss
+    if (window.innerWidth <= 1024) {
+      setTimeout(function() {
+        document.querySelectorAll('section, section > div, section > div > div').forEach(function(el) {
+          var style = window.getComputedStyle(el);
+          if (style.display === 'grid') {
+            var cols = style.gridTemplateColumns;
+            // If there are multiple column values (e.g., "400px 600px" or "1fr 1fr"), force to single column
+            if (cols && cols.split(' ').filter(function(c) { return c.trim() && c !== '0px'; }).length > 1) {
+              el.style.display = 'flex';
+              el.style.flexDirection = 'column';
+              // Force all children to full width
+              Array.from(el.children).forEach(function(child) {
+                child.style.width = '100%';
+              });
+            }
+          }
+        });
+      }, 500);
+    }
+
+    // Cap Google Maps iframe height on mobile
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('iframe[src*="google.com/maps"], iframe[src*="maps.google"]').forEach(function(iframe) {
+        iframe.style.height = '250px';
+        iframe.style.maxHeight = '250px';
+        iframe.style.width = '100%';
+        iframe.style.borderRadius = '16px';
+      });
+    }
+
+  } catch(e) { console.error('[SiteFlow Safety]', e); }
+})();
+</script>
+</body>
+</html>
